@@ -817,6 +817,54 @@ section {
   text-transform: none;
 }
 
+.mission-card__proof {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.mission-card__proof p {
+  position: relative;
+  margin: 0;
+  padding-left: 1rem;
+}
+
+.mission-card__proof p::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.8rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(var(--accent-rgb), 0.9);
+}
+
+.mission-card__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.mission-card__links a {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.65rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(var(--accent-rgb), 0.2);
+  background: rgba(var(--accent-rgb), 0.08);
+  color: rgba(242, 248, 255, 0.92);
+  text-decoration: none;
+  transition:
+    border-color 180ms ease,
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.mission-card__links a:hover {
+  border-color: rgba(var(--accent-rgb), 0.4);
+  background: rgba(var(--accent-rgb), 0.14);
+}
+
 .mission-card--signal {
   background:
     radial-gradient(circle at 10% 10%, rgba(124, 232, 255, 0.1), transparent 36%),

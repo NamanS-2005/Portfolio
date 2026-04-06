@@ -1,30 +1,30 @@
 export const sections = [
-  { id: "intro", label: "Arrival", short: "01" },
-  { id: "about", label: "Journey", short: "02" },
-  { id: "skills", label: "Systems", short: "03" },
-  { id: "projects", label: "Missions", short: "04" },
-  { id: "experience", label: "Impact", short: "05" },
-  { id: "contact", label: "Transmission", short: "06" },
+  { id: "intro", label: "Intro", short: "01" },
+  { id: "about", label: "About", short: "02" },
+  { id: "skills", label: "Skills", short: "03" },
+  { id: "projects", label: "Projects", short: "04" },
+  { id: "experience", label: "Experience", short: "05" },
+  { id: "contact", label: "Contact", short: "06" },
 ];
 
 export const storyBeats = [
   {
-    eyebrow: "Origin Story",
-    title: "Engineering with narrative clarity",
+    eyebrow: "What He Builds",
+    title: "Full-stack products with practical AI use cases",
     text:
-      "Naman builds products the way a director builds scenes: every choice serves the outcome, every system has intent, and every detail pushes the experience forward.",
+      "Naman's work sits at the intersection of product engineering and applied machine learning, with a focus on building things that are useful and shippable.",
   },
   {
-    eyebrow: "Core Drive",
-    title: "Curiosity tuned for hard problems",
+    eyebrow: "How He Works",
+    title: "Strong execution with a bias toward clarity",
     text:
-      "From machine learning systems to full-stack platforms, he moves comfortably between research depth and production delivery without losing momentum.",
+      "He enjoys taking a problem apart, picking the right tools for it, and turning rough ideas into working software without overcomplicating the stack.",
   },
   {
-    eyebrow: "North Star",
-    title: "Useful technology with cinematic polish",
+    eyebrow: "What This Site Tries To Show",
+    title: "Frontend craft backed by real engineering interests",
     text:
-      "The mission is simple: create software that feels intelligent, dependable, and memorable long after the first interaction.",
+      "This portfolio leans visual, but the goal is straightforward: show product sense, implementation ability, and the range to move between UI, backend, and ML work.",
   },
 ];
 
@@ -35,63 +35,81 @@ export const skillClusters = [
     items: ["C++", "Python", "JavaScript", "TypeScript", "SQL"],
   },
   {
-    name: "Frameworks",
+    name: "Frontend",
     accent: "violet",
-    items: ["React", "Next.js", "Node.js", "Express", "Tailwind", "FastAPI"],
+    items: ["React", "Next.js", "Framer Motion", "GSAP", "Vite"],
   },
   {
-    name: "ML / AI",
+    name: "Backend / Data",
     accent: "amber",
-    items: ["PyTorch", "TensorFlow", "OpenCV", "Scikit-learn", "LLM Tooling"],
+    items: ["Node.js", "Express", "FastAPI", "PostgreSQL", "MongoDB"],
   },
   {
-    name: "Systems",
+    name: "ML / Tools",
     accent: "emerald",
-    items: ["Docker", "PostgreSQL", "MongoDB", "Git", "Linux", "AWS"],
+    items: ["PyTorch", "OpenCV", "Scikit-learn", "Git", "Docker", "Linux"],
   },
 ];
 
 export const projects = [
   {
     title: "Brain Tumor Detection",
-    tag: "AI Mission",
+    tag: "Applied ML",
     year: "2025",
-    role: "Deep learning, medical imaging, model evaluation",
+    role: "Python, PyTorch, image preprocessing, model evaluation",
     problem:
-      "Medical image review can be time-intensive, and accurate prioritization matters when the stakes are high.",
+      "Build a classifier for MRI-based brain tumor detection and present the work clearly enough that the training pipeline, evaluation flow, and assumptions are easy to inspect.",
     approach:
-      "Built a classification pipeline around MRI scans, combining rigorous preprocessing, experimental model training, and explainable outputs to surface high-confidence predictions.",
+      "Worked on image preprocessing, model experimentation, and evaluation so the project could move beyond a notebook demo into a cleaner end-to-end ML workflow.",
     impact:
-      "Turned a research-heavy challenge into a focused, decision-support experience that showcases Naman's ability to ship AI with practical value.",
-    stack: ["PyTorch", "OpenCV", "NumPy", "Explainability"],
+      "Best presented as an applied ML project that demonstrates model-building fundamentals, medical-image preprocessing, and the ability to structure an experimental pipeline.",
+    stack: ["PyTorch", "OpenCV", "NumPy", "Python"],
+    highlights: [
+      "MRI preprocessing and classification workflow",
+      "Model training and evaluation loop",
+      "Good candidate for adding metrics, repo links, and sample outputs next",
+    ],
+    links: [],
     mood: "signal",
   },
   {
     title: "DivNey",
-    tag: "Full-Stack Mission",
+    tag: "Full-Stack App",
     year: "2025",
-    role: "Product architecture, AI integration, frontend systems",
+    role: "React, Node.js, database design, AI-assisted features",
     problem:
-      "Users needed a smarter end-to-end experience that could handle workflows, insight generation, and polished interaction in one product.",
+      "Create a product that combines a modern frontend, backend workflows, and AI-backed interactions in one usable experience.",
     approach:
-      "Designed a full-stack platform with a strong frontend narrative, tight backend orchestration, and AI-powered features that assist instead of distract.",
+      "Built the application across the stack, focusing on frontend experience, server-side logic, and the way AI features fit into the product instead of overwhelming it.",
     impact:
-      "Demonstrated Naman's ability to merge product thinking with engineering execution across interface, infrastructure, and intelligence layers.",
+      "Shows broader product engineering ability than a single ML project: interface work, backend wiring, and feature integration in one build.",
     stack: ["React", "Node.js", "PostgreSQL", "AI APIs"],
+    highlights: [
+      "Frontend and backend developed as one product surface",
+      "AI used as a feature layer rather than a gimmick",
+      "Would benefit from public demo links and measurable usage or performance notes",
+    ],
+    links: [],
     mood: "nebula",
   },
   {
     title: "Thinkistry",
-    tag: "Platform Mission",
+    tag: "Platform Work",
     year: "2024",
-    role: "Platform engineering, developer experience, systems design",
+    role: "TypeScript, APIs, platform engineering, developer workflow",
     problem:
-      "Scaling a learning-focused platform requires stable foundations, fast iteration loops, and system choices that don't collapse under growth.",
+      "Support a platform setup that can handle ongoing product work without slowing future iteration.",
     approach:
-      "Focused on platform reliability and engineering ergonomics, shaping workflows, APIs, and delivery patterns that made future product work faster and safer.",
+      "Focused on engineering structure: APIs, platform flows, and the sort of implementation choices that make future work easier to maintain and extend.",
     impact:
-      "Proved strong systems judgment: the kind that keeps teams shipping quickly without sacrificing maintainability.",
+      "Useful as a systems-oriented project because it shows an interest in maintainability, platform thinking, and developer experience.",
     stack: ["TypeScript", "APIs", "CI/CD", "Cloud Services"],
+    highlights: [
+      "Platform-minded engineering rather than single-screen UI work",
+      "Attention to maintainability and development workflow",
+      "Another section that becomes much stronger with links and concrete outcomes",
+    ],
+    links: [],
     mood: "matrix",
   },
 ];
@@ -99,33 +117,33 @@ export const projects = [
 export const timeline = [
   {
     title: "IIT Bombay",
-    period: "Research / Real-World Impact",
+    period: "Research work",
     description:
-      "Worked close to meaningful technical problems with real-world stakes, sharpening the ability to translate complex research ideas into practical engineering outcomes.",
+      "This is an important credibility point, but it needs the exact role, team, timeline, and contribution details added before the portfolio is final.",
   },
   {
-    title: "Hackathon Circuit",
-    period: "High-pressure builds",
+    title: "Hackathons",
+    period: "Builds under pressure",
     description:
-      "Competed in fast-moving environments where clarity, adaptability, and decisive execution mattered as much as raw coding speed.",
+      "Hackathons are worth keeping only if the final version includes event names, team size, project built, and any placements or outcomes.",
   },
   {
-    title: "LeetCode Consistency",
-    period: "Daily discipline",
+    title: "LeetCode",
+    period: "Problem-solving practice",
     description:
-      "Built algorithmic fluency through repetition and consistency, strengthening the problem-solving reflexes that show up in production work too.",
+      "A useful supporting signal when paired with a rating, solved count, or contest performance. Without numbers, it should stay secondary to projects.",
   },
 ];
 
 export const contacts = [
   {
-    label: "Email",
-    value: "naman.sharma.dev@example.com",
-    href: "mailto:naman.sharma.dev@example.com",
+    label: "GitHub",
+    value: "github.com/NamanS-2005",
+    href: "https://github.com/NamanS-2005",
   },
   {
-    label: "LinkedIn",
-    value: "linkedin.com/in/naman-sharma",
-    href: "https://www.linkedin.com/in/naman-sharma",
+    label: "Portfolio Repo",
+    value: "github.com/NamanS-2005/Portfolio",
+    href: "https://github.com/NamanS-2005/Portfolio",
   },
 ];

@@ -51,9 +51,9 @@ function ProjectMission({ project, active, onOpen }) {
         className="mission-card__button"
         onClick={onOpen}
         data-magnetic
-        data-cursor-label={active ? "Collapse" : "Open Mission"}
+        data-cursor-label={active ? "Collapse" : "View Details"}
       >
-        {active ? "Collapse Mission" : "Open Mission"}
+        {active ? "Hide Details" : "View Details"}
       </button>
       <AnimatePresence initial={false}>
         {active ? (
@@ -82,6 +82,27 @@ function ProjectMission({ project, active, onOpen }) {
                 <span key={item}>{item}</span>
               ))}
             </div>
+            <div className="mission-card__proof">
+              {project.highlights.map((item) => (
+                <p key={item}>{item}</p>
+              ))}
+            </div>
+            {project.links.length ? (
+              <div className="mission-card__links">
+                {project.links.map((link) => (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    data-magnetic
+                    data-cursor-label={link.label}
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </div>
+            ) : null}
           </motion.div>
         ) : null}
       </AnimatePresence>
@@ -182,7 +203,6 @@ export default function App() {
   };
 
   const activeMission = projects.find((project) => project.title === activeProject);
-  const activeMeta = sections.find((section) => section.id === activeSection) ?? sections[0];
 
   return (
     <div className={`app-shell app-shell--${activeSection}`}>
@@ -219,17 +239,6 @@ export default function App() {
         ))}
       </nav>
 
-      <aside className="journey-hud glass-panel" aria-label="Journey Status">
-        <span className="journey-hud__eyebrow">World State</span>
-        <strong>{activeMeta.label}</strong>
-        <p>
-          Scroll is driving the camera through Naman&apos;s cinematic system map.
-        </p>
-        <div className="journey-hud__meter">
-          <motion.span style={{ scaleY: scrollYProgress }} />
-        </div>
-      </aside>
-
       <main className="experience">
         <motion.section
           id="intro"
@@ -242,21 +251,22 @@ export default function App() {
           <div className="hero__background-grid" aria-hidden="true" />
           <div className="hero-layout">
             <div ref={heroRef} className="hero-panel glass-panel">
-              <span className="hero-panel__eyebrow">Interactive Film Portfolio</span>
+              <span className="hero-panel__eyebrow">Portfolio</span>
               <div className="hero-panel__title">
                 <span className="hero-panel__title-line">Naman Sharma</span>
                 <span className="hero-panel__title-line">
-                  Engineer. Builder. Problem Solver.
+                  Software Engineer focused on product and AI work.
                 </span>
               </div>
               <p className="hero-panel__copy">
-                A guided digital universe where machine intelligence, product craft,
-                and systems thinking unfold like a cinematic mission campaign.
+                Builds full-stack applications and applied ML projects with an
+                emphasis on clear implementation, useful features, and polished
+                frontend execution.
               </p>
               <div className="hero-panel__strip">
-                <span>Scroll-driven camera</span>
-                <span>Interactive missions</span>
-                <span>Immersive system worlds</span>
+                <span>React + Node.js</span>
+                <span>Applied machine learning</span>
+                <span>Product-minded engineering</span>
               </div>
               <div className="hero-panel__actions">
                 <button
@@ -264,44 +274,45 @@ export default function App() {
                   className="primary-button"
                   onClick={() => scrollToSection("projects")}
                   data-magnetic
-                  data-cursor-label="Enter Missions"
+                  data-cursor-label="Projects"
                 >
-                  Enter the Journey
+                  View Projects
                 </button>
                 <button
                   type="button"
                   className="secondary-button"
                   onClick={() => scrollToSection("contact")}
                   data-magnetic
-                  data-cursor-label="Transmit"
+                  data-cursor-label="Contact"
                 >
-                  Initiate Connection
+                  Contact / Links
                 </button>
               </div>
             </div>
 
             <div className="hero-stage">
               <div className="hero-stage__frame glass-panel">
-                <span>Scene 01 / Identity Core</span>
-                <strong>Systems, stories, and sharp execution aligned.</strong>
+                <span>Overview</span>
+                <strong>Strong frontend execution. Content still needs proof.</strong>
                 <p>
-                  The opening scene establishes Naman as a builder who moves from
-                  research depth to product impact without losing clarity.
+                  The interface quality is already strong. The next step is making
+                  the project details, links, metrics, and experience entries just
+                  as concrete.
                 </p>
               </div>
 
               <div className="hero-stats">
                 <div className="hero-stat glass-panel">
-                  <span>Mode</span>
-                  <strong>Cinematic + Interactive</strong>
-                </div>
-                <div className="hero-stat glass-panel">
                   <span>Focus</span>
-                  <strong>AI, full-stack systems, product execution</strong>
+                  <strong>Full-stack applications</strong>
                 </div>
                 <div className="hero-stat glass-panel">
-                  <span>Feel</span>
-                  <strong>IMAX-scale, game-aware, emotionally clean</strong>
+                  <span>Interest</span>
+                  <strong>Applied ML and product UX</strong>
+                </div>
+                <div className="hero-stat glass-panel">
+                  <span>Needs Next</span>
+                  <strong>Repos, demos, screenshots, measurable results</strong>
                 </div>
               </div>
             </div>
@@ -317,23 +328,24 @@ export default function App() {
         >
           <SectionHeading
             index="02"
-            label="Exploration Phase"
-            title="The journey is built like a world, not a resume."
-            text="Scroll behaves like a camera move through Naman's mindset, methods, and motivations. Every zone is a layer of the same system: meaningful problem solving with strong execution."
+            label="About"
+            title="Clearer positioning, less performance art."
+            text="The goal here is simple: explain what Naman builds, how he works, and what still needs stronger evidence before this becomes a fully convincing public portfolio."
           />
 
           <div className="story-zone">
             <motion.div className="story-command glass-panel" {...reveal}>
-              <span>Guided Sequence</span>
-              <h3>Software, treated like scene design.</h3>
+              <span>Summary</span>
+              <h3>Good portfolios earn trust fast.</h3>
               <p>
-                Naman&apos;s edge is not just technical range. It&apos;s the ability to
-                make difficult systems feel intentional, coherent, and useful.
+                The visuals can stay ambitious, but the content needs to stay
+                grounded. This pass keeps the design while making the message more
+                direct and believable.
               </p>
               <div className="story-command__signals">
-                <span>Research-minded</span>
-                <span>Product-aware</span>
-                <span>Execution-first</span>
+                <span>Clearer copy</span>
+                <span>Less hype</span>
+                <span>More proof</span>
               </div>
             </motion.div>
 
@@ -362,16 +374,16 @@ export default function App() {
         >
           <SectionHeading
             index="03"
-            label="Deep Dive Zone"
-            title="A systems matrix tuned for shipping ambitious ideas."
-            text="The skill map is organized like a live engine room: languages power the core, frameworks shape the interface, AI drives intelligence, and systems keep everything dependable under pressure."
+            label="Skills"
+            title="Skills should line up with visible work."
+            text="This list is narrower and easier to defend. The best next improvement is to connect each tool to a project, repo, or concrete result."
           />
 
           <div className="skills-stage">
             <motion.div className="skills-reactor glass-panel" {...reveal}>
               <div className="skills-reactor__core">
-                <span>Core Engine</span>
-                <strong>Adaptive technical range</strong>
+                <span>Core Focus</span>
+                <strong>Frontend, backend, and applied ML</strong>
               </div>
               <div className="skills-reactor__rings" aria-hidden="true">
                 <span />
@@ -420,9 +432,9 @@ export default function App() {
         >
           <SectionHeading
             index="04"
-            label="Mission Control"
-            title="Projects are presented as missions with stakes, choices, and outcomes."
-            text="Each build is framed as a narrative arc: what challenge existed, how Naman engineered through it, and why the result mattered. This keeps the work concrete and memorable."
+            label="Projects"
+            title="The work matters more than the framing."
+            text="These projects are more useful when they explain the build, the stack, and the result in plain language. Public repos, demos, screenshots, and metrics should be the next additions."
           />
 
           <div className="projects-layout">
@@ -442,7 +454,7 @@ export default function App() {
             </div>
 
             <motion.aside className="mission-preview glass-panel" {...reveal}>
-              <span className="mission-preview__eyebrow">Live Mission Feed</span>
+              <span className="mission-preview__eyebrow">Selected Project</span>
               <div className="mission-preview__chamber" aria-hidden="true">
                 <span />
                 <span />
@@ -454,25 +466,25 @@ export default function App() {
                   <p>{activeMission.approach}</p>
                   <div className="mission-preview__metrics">
                     <div>
-                      <span>Mission Type</span>
+                      <span>Category</span>
                       <strong>{activeMission.tag}</strong>
                     </div>
                     <div>
-                      <span>Primary Focus</span>
+                      <span>Primary Stack</span>
                       <strong>{activeMission.stack[0]}</strong>
                     </div>
                     <div>
-                      <span>Impact Lens</span>
-                      <strong>Outcome-driven engineering</strong>
+                      <span>What Improves This</span>
+                      <strong>Repo, demo, screenshots, metrics</strong>
                     </div>
                   </div>
                 </>
               ) : (
                 <>
-                  <h3>Select a mission</h3>
+                  <h3>Select a project</h3>
                   <p>
-                    Open any project card to shift into its detailed view and inspect
-                    the problem, approach, and impact.
+                    Open any card to review the implementation summary and the
+                    proof points that still need to be added.
                   </p>
                 </>
               )}
@@ -489,9 +501,9 @@ export default function App() {
         >
           <SectionHeading
             index="05"
-            label="Impact Timeline"
-            title="Experience framed as momentum, not chronology."
-            text="The timeline focuses on signals of capability: research rigor, competitive building under pressure, and the steady discipline that sharpens technical instincts over time."
+            label="Experience"
+            title="Facts will do more than atmosphere here."
+            text="The visual treatment stays, but the content is now explicit about where exact role, timeline, and outcome details still need to be filled in."
           />
 
           <div className="timeline">
@@ -523,11 +535,11 @@ export default function App() {
           className="contact-section"
         >
           <motion.div className="contact-terminal glass-panel" {...reveal}>
-            <span className="contact-terminal__eyebrow">Final Scene</span>
-            <h2>You are connecting to Naman&apos;s system.</h2>
+            <span className="contact-terminal__eyebrow">Contact</span>
+            <h2>Public links first. Direct contact details next.</h2>
             <p>
-              If the mission is building something sharp, fast, intelligent, and
-              memorable, the transmission channel is open.
+              The placeholder email is gone. For now, GitHub is the reliable public
+              point of contact shown in this build.
             </p>
 
             <div className="contact-terminal__grid">
@@ -561,16 +573,22 @@ export default function App() {
             <button
               type="button"
               className="primary-button primary-button--wide"
-              onClick={() => window.open("mailto:naman.sharma.dev@example.com", "_self")}
+              onClick={() =>
+                window.open(
+                  "https://github.com/NamanS-2005",
+                  "_blank",
+                  "noopener,noreferrer",
+                )
+              }
               data-magnetic
-              data-cursor-label="Transmit"
+              data-cursor-label="GitHub"
             >
-              Enter Transmission
+              Open GitHub Profile
             </button>
 
             <div className="contact-terminal__footer">
-              <span>Signal received.</span>
-              <span>Let&apos;s build the impossible.</span>
+              <span>Add real email and LinkedIn before launch.</span>
+              <span>Keep the design. Strengthen the proof.</span>
             </div>
           </motion.div>
         </section>
